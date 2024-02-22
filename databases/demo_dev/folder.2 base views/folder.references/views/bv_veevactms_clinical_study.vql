@@ -1,4 +1,4 @@
-﻿CREATE OR REPLACE INTERFACE VIEW i_veevactms_clinical_study (
+﻿CREATE OR REPLACE INTERFACE VIEW bv_veevactms_clinical_study (
         clinical_study_master_id:text (sourcetypedecimals = '0', sourcetyperadix = '10', sourcetypesize = '128', description = 'Study Number
 ', sourcetypeid = '12'),
         study_id:text (sourcetypedecimals = '0', sourcetyperadix = '10', sourcetypesize = '15', description = 'Record ID
@@ -252,6 +252,6 @@ The study designation categorises a study by an accepted combination of sponsors
 )
     FOLDER = '/2 base views/references';
 
-ALTER VIEW i_veevactms_clinical_study
+ALTER VIEW bv_veevactms_clinical_study
  LAYOUT (clinical_study = [638, 44, 337, 200]);
 

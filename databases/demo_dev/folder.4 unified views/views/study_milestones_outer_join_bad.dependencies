@@ -3,5 +3,5 @@
 /databases/demo_dev/folder.2 base views/2 base views.vql
 /databases/demo_dev/folder.2 base views/folder.references/references.vql
 /databases/demo_dev/folder.2 base views/folder.references/views/i_veevactms_clinical_study_milestone.vql
-/databases/demo_dev/folder.2 base views/folder.references/views/i_veevactms_clinical_study.vql
+/databases/demo_dev/folder.2 base views/folder.references/views/bv_veevactms_clinical_study.vql
 /databases/demo_dev/folder.3 derived views/views/dv_study_milestones_outer_join_bad.vql

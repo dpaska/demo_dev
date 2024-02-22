@@ -1,9 +1,9 @@
 ﻿CREATE OR REPLACE ASSOCIATION i_veevactms_clinical_study_milestone_i_veevactms_clinical_study REFERENTIAL CONSTRAINT 
 FOLDER = '/5 associations'
     ENDPOINT i_veevactms_clinical_study i_veevactms_clinical_study_milestone (0,1)
-    ENDPOINT i_veevactms_clinical_study_milestone i_veevactms_clinical_study PRINCIPAL (1)
+    ENDPOINT i_veevactms_clinical_study_milestone bv_veevactms_clinical_study PRINCIPAL (1)
     ADD MAPPING clinical_study_master_id=clinical_study_master_id;
 
 ALTER ASSOCIATION i_veevactms_clinical_study_milestone_i_veevactms_clinical_study
- LAYOUT (i_veevactms_clinical_study_milestone = [163, 98, 200, 225], i_veevactms_clinical_study = [475, 84, 200, 225]);
+ LAYOUT (i_veevactms_clinical_study_milestone = [163, 98, 200, 225], bv_veevactms_clinical_study = [475, 84, 200, 225]);
 
