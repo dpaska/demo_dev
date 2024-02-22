@@ -1,0 +1,153 @@
+﻿CREATE OR REPLACE INTERFACE VIEW study_milestones_outer_join_bad (
+        milestone_id:text (sourcetypedecimals = '0', sourcetyperadix = '10', sourcetypesize = '15', description = 'TBD', sourcetypeid = '12'),
+        legacy_milestone_type:text (sourcetypedecimals = '0', sourcetyperadix = '10', sourcetypesize = '500', description = 'Legacy Milestone Type (full milestone picklist)
+', sourcetypeid = '12'),
+        milestone_type:text (sourcetypedecimals = '0', sourcetyperadix = '10', sourcetypesize = '500', description = 'Milestone Type (full milestone picklist)
+', sourcetypeid = '-9'),
+        study_centre:text (sourcetypedecimals = '0', sourcetyperadix = '10', sourcetypesize = '128', description = 'TBD', sourcetypeid = '12'),
+        study_country:text (sourcetypedecimals = '0', sourcetyperadix = '10', sourcetypesize = '128', description = 'Study Centre name
+', sourcetypeid = '12'),
+        abbreviation:text (sourcetypedecimals = '0', sourcetyperadix = '10', sourcetypesize = '20', description = 'Study Country
+', sourcetypeid = '12'),
+        actual_finish_date:localdate (sourcetypedecimals = '0', sourcetyperadix = '10', sourcetypesize = '7', description = 'Actual Milestone Complete Date entered or calculated in Vault
+', sourcetypeid = '91'),
+        actual_start_date:localdate (sourcetypedecimals = '0', sourcetyperadix = '10', sourcetypesize = '10', description = 'Actual Complete Date for Submission Milestones entered in Vault
+', sourcetypeid = '91'),
+        baseline_finish_date:localdate (sourcetypedecimals = '0', sourcetyperadix = '10', sourcetypesize = '10', description = 'First Planned Finish Date entered in Vault
+', sourcetypeid = '91'),
+        baseline_start_date:localdate (sourcetypedecimals = '0', sourcetyperadix = '10', sourcetypesize = '10', description = 'First Planned Start Date entered in Vault
+', sourcetypeid = '91'),
+        planned_finish_date:localdate (sourcetypedecimals = '0', sourcetyperadix = '10', sourcetypesize = '7', description = 'Planned Milestone Complete Date entered in Vault
+', sourcetypeid = '91'),
+        planned_start_date:localdate (sourcetypedecimals = '0', sourcetyperadix = '10', sourcetypesize = '10', description = 'Planned Start Date for Submission Milestones entered in Vault
+', sourcetypeid = '91'),
+        centre_id:text (sourcetypedecimals = '0', sourcetyperadix = '10', sourcetypesize = '15', description = 'Study Site name
+', sourcetypeid = '12'),
+        study_id:text (sourcetypedecimals = '0', sourcetyperadix = '10', sourcetypesize = '15', description = 'Study ID
+', sourcetypeid = '12'),
+        study_country_id:text (sourcetypedecimals = '0', sourcetyperadix = '10', sourcetypesize = '15', description = 'Study Country ID
+', sourcetypeid = '12'),
+        clinical_study_master_id:text (sourcetypedecimals = '0', sourcetyperadix = '10', sourcetypesize = '128', description = 'Study Number
+', sourcetypeid = '12'),
+        actual_completed:long (sourcetypedecimals = '0', sourcetyperadix = '10', sourcetypesize = '19', sourcetypeid = '-5'),
+        actual_enrolled:long (sourcetypedecimals = '0', sourcetyperadix = '10', sourcetypesize = '19', sourcetypeid = '-5'),
+        actual_screen_failed:long (sourcetypedecimals = '0', sourcetyperadix = '10', sourcetypesize = '19', sourcetypeid = '-5'),
+        actual_screened:long (sourcetypedecimals = '0', sourcetyperadix = '10', sourcetypesize = '19', sourcetypeid = '-5'),
+        actual_centres:int (sourcetypedecimals = '0', sourcetyperadix = '10', sourcetypesize = '10', description = 'TBD', sourcetypeid = '4'),
+        actual_withdrawn:long (sourcetypedecimals = '0', sourcetyperadix = '10', sourcetypesize = '19', sourcetypeid = '-5'),
+        business_area:text (sourcetypedecimals = '0', sourcetyperadix = '10', sourcetypesize = '128', sourcetypeid = '12'),
+        company:text (sourcetypedecimals = '0', sourcetyperadix = '10', sourcetypesize = '500', description = 'The title of the company that owns the work.
+
+Valid values include:
+
+GSK Pharma
+GSK Biologicals
+GSK Sirtris
+GSK Stiefel
+ViiV
+GSK Consumer Healthcare', sourcetypeid = '-9'),
+        eudract_number:text (sourcetypedecimals = '0', sourcetyperadix = '10', sourcetypesize = '50', description = 'TBD', sourcetypeid = '12'),
+        extension_study:text (sourcetypedecimals = '0', sourcetyperadix = '10', sourcetypesize = '5', description = 'TBD', sourcetypeid = '12'),
+        external_database:text (sourcetypedecimals = '0', sourcetyperadix = '10', sourcetypesize = '5', sourcetypeid = '12'),
+        study_external_id:text (sourcetypedecimals = '0', sourcetyperadix = '10', sourcetypesize = '50', description = 'External ID - reference for external system to manage record
+', sourcetypeid = '12'),
+        fso:text (sourcetypedecimals = '0', sourcetyperadix = '10', sourcetypesize = '500', sourcetypeid = '-9'),
+        fso_provider:text (sourcetypedecimals = '0', sourcetyperadix = '10', sourcetypesize = '128', description = 'TBD', sourcetypeid = '12'),
+        funding_source:text (sourcetypedecimals = '0', sourcetyperadix = '10', sourcetypesize = '128', sourcetypeid = '12'),
+        indication:text (sourcetypedecimals = '0', sourcetyperadix = '10', sourcetypesize = '500', description = 'Not in Use
+', sourcetypeid = '-9'),
+        lead_office:text (sourcetypedecimals = '0', sourcetyperadix = '10', sourcetypesize = '128', sourcetypeid = '12'),
+        legacy_study:text (sourcetypedecimals = '0', sourcetyperadix = '10', sourcetypesize = '500', sourcetypeid = '-9'),
+        masking:text (sourcetypedecimals = '0', sourcetyperadix = '10', sourcetypesize = '500', sourcetypeid = '-9'),
+        metric_calculation:text (sourcetypedecimals = '0', sourcetyperadix = '10', sourcetypesize = '500', description = 'Determine whether Metrics are based on Dates or Subject Statuses
+', sourcetypeid = '-9'),
+        template_milestone_set:text (sourcetypedecimals = '0', sourcetyperadix = '10', sourcetypesize = '128', description = 'Not In Use
+', sourcetypeid = '12'),
+        milestone_master_set:text (sourcetypedecimals = '0', sourcetyperadix = '10', sourcetypesize = '128', description = 'Select Milestone Template based on Study Designation
+', sourcetypeid = '12'),
+        modified_by:text (sourcetypedecimals = '0', sourcetyperadix = '10', sourcetypesize = '128', description = 'Modified by
+', sourcetypeid = '12'),
+        modified_date:timestamp (sourcetypedecimals = '3', sourcetyperadix = '10', sourcetypesize = '23', description = 'Modification date
+', sourcetypeid = '93'),
+        number_of_extension_studies:int (sourcetypedecimals = '0', sourcetyperadix = '10', sourcetypesize = '10', sourcetypeid = '4'),
+        number_of_open_protocol_deviations:long (sourcetypedecimals = '0', sourcetyperadix = '10', sourcetypesize = '19', sourcetypeid = '-5'),
+        on_hold_date:localdate (sourcetypedecimals = '0', sourcetyperadix = '10', sourcetypesize = '10', sourcetypeid = '91'),
+        on_hold_reason:text (sourcetypedecimals = '0', sourcetyperadix = '10', sourcetypesize = '500', description = 'TBD', sourcetypeid = '-9'),
+        pgx_collection:text (sourcetypedecimals = '0', sourcetyperadix = '10', sourcetypesize = '500', sourcetypeid = '-9'),
+        planned_centres:long (sourcetypedecimals = '0', sourcetyperadix = '10', sourcetypesize = '19', description = 'TBD', sourcetypeid = '-5'),
+        planned_study_end_date:localdate (sourcetypedecimals = '0', sourcetyperadix = '10', sourcetypesize = '10', sourcetypeid = '91'),
+        planned_subjects:long (sourcetypedecimals = '0', sourcetyperadix = '10', sourcetypesize = '19', sourcetypeid = '-5'),
+        population_18yrs_studied:text (sourcetypedecimals = '0', sourcetyperadix = '10', sourcetypesize = '128', description = 'TBD', sourcetypeid = '12'),
+        post_authorisation_safety_study:text (sourcetypedecimals = '0', sourcetyperadix = '10', sourcetypesize = '500', sourcetypeid = '-9'),
+        primary_asset:text (sourcetypedecimals = '0', sourcetyperadix = '10', sourcetypesize = '128', description = 'TBD', sourcetypeid = '12'),
+        primary_indication:text (sourcetypedecimals = '0', sourcetyperadix = '10', sourcetypesize = '128', description = 'TBD', sourcetypeid = '12'),
+        primary_subject_population:text (sourcetypedecimals = '0', sourcetyperadix = '10', sourcetypesize = '128', sourcetypeid = '12'),
+        project_description:text (sourcetypedecimals = '0', sourcetyperadix = '10', sourcetypesize = '1500', sourcetypeid = '12'),
+        project_id:text (sourcetypedecimals = '0', sourcetyperadix = '10', sourcetypesize = '128', description = 'TBD', sourcetypeid = '12'),
+        full_title:text (sourcetypedecimals = '0', sourcetyperadix = '10', sourcetypesize = '1500', description = 'Protocol Title
+', sourcetypeid = '12'),
+        recruitment_planning_frequency:text (sourcetypedecimals = '0', sourcetyperadix = '10', sourcetypesize = '500', description = 'Recruitment Planning_Frequency - Not IN USE
+', sourcetypeid = '-9'),
+        recruitment_planning_level:text (sourcetypedecimals = '0', sourcetyperadix = '10', sourcetypesize = '500', description = 'Recruitment Planning_Level - Not IN USE
+', sourcetypeid = '-9'),
+        route_of_administration:text (sourcetypedecimals = '0', sourcetyperadix = '10', sourcetypesize = '500', sourcetypeid = '-9'),
+        study_accountable_person_mudid:text (sourcetypedecimals = '0', sourcetyperadix = '10', sourcetypesize = '20', sourcetypeid = '12'),
+        sponsorship_type:text (sourcetypedecimals = '0', sourcetyperadix = '10', sourcetypesize = '500', sourcetypeid = '-9'),
+        study_lifecycle_state:text (sourcetypedecimals = '0', sourcetyperadix = '10', sourcetypesize = '500', description = 'Candidate/Planning/Active/Closing/Arvchied
+', sourcetypeid = '12'),
+        system_status:text (sourcetypedecimals = '0', sourcetyperadix = '10', sourcetypesize = '500', description = 'Active or Inactive
+', sourcetypeid = '-9'),
+        study_accountable_person_id:text (sourcetypedecimals = '0', sourcetyperadix = '10', sourcetypesize = '15', sourcetypeid = '12'),
+        study_approval_status:text (sourcetypedecimals = '0', sourcetyperadix = '10', sourcetypesize = '500', sourcetypeid = '-9'),
+        study_blind_lifted:text (sourcetypedecimals = '0', sourcetyperadix = '10', sourcetypesize = '5', sourcetypeid = '12'),
+        study_designation:text (sourcetypedecimals = '0', sourcetyperadix = '10', sourcetypesize = '128', description = 'The title of the Clinical Study Designation
+The study designation categorises a study by an accepted combination of sponsorship, study type, business management and funding.', sourcetypeid = '12'),
+        abbreviated_title:text (sourcetypedecimals = '0', sourcetyperadix = '10', sourcetypesize = '300', sourcetypeid = '12'),
+        study_outsourced:text (sourcetypedecimals = '0', sourcetyperadix = '10', sourcetypesize = '50', sourcetypeid = '12'),
+        study_phase:text (sourcetypedecimals = '0', sourcetyperadix = '10', sourcetypesize = '500', description = 'Study Phase
+', sourcetypeid = '-9'),
+        study_start_date:localdate (sourcetypedecimals = '0', sourcetyperadix = '10', sourcetypesize = '10', sourcetypeid = '91'),
+        study_type:text (sourcetypedecimals = '0', sourcetyperadix = '10', sourcetypesize = '500', description = 'Type Of Study - related to Designation
+', sourcetypeid = '-9'),
+        sum_of_subjects_planned_at_country:long (sourcetypedecimals = '0', sourcetyperadix = '10', sourcetypesize = '19', sourcetypeid = '-5'),
+        sum_of_subjects_planned_at_centre:long (sourcetypedecimals = '0', sourcetyperadix = '10', sourcetypesize = '19', sourcetypeid = '-5'),
+        targeted_safety_study:text (sourcetypedecimals = '0', sourcetyperadix = '10', sourcetypesize = '500', sourcetypeid = '-9'),
+        therapy_area:text (sourcetypedecimals = '0', sourcetyperadix = '10', sourcetypesize = '128', sourcetypeid = '12'),
+        verification_status:text (sourcetypedecimals = '0', sourcetyperadix = '10', sourcetypesize = '150', sourcetypeid = '12'),
+        study_accountable_person_name:text (sourcetypedecimals = '0', sourcetyperadix = '10', sourcetypesize = '128', description = 'TBD', sourcetypeid = '12'),
+        legacy_study_status:text (sourcetypedecimals = '0', sourcetyperadix = '10', sourcetypesize = '65536', sourcetypeid = '12'),
+        alternate_study_number:text (sourcetypedecimals = '0', sourcetyperadix = '10', sourcetypesize = '60', sourcetypeid = '12'),
+        date_of_study_completion:localdate (sourcetypedecimals = '0', sourcetyperadix = '10', sourcetypesize = '10', sourcetypeid = '91'),
+        using_legacy_groups:text (sourcetypedecimals = '0', sourcetyperadix = '10', sourcetypesize = '500', sourcetypeid = '-9'),
+        asset_na_approved:text (sourcetypedecimals = '0', sourcetyperadix = '10', sourcetypesize = '200', sourcetypeid = '12'),
+        asset_na_approved_comment:text (sourcetypedecimals = '0', sourcetyperadix = '10', sourcetypesize = '200', sourcetypeid = '12'),
+        create_milestone_subset_manually:text (sourcetypedecimals = '0', sourcetyperadix = '10', sourcetypesize = '5', sourcetypeid = '12'),
+        study_disclosure_tier:text (sourcetypedecimals = '0', sourcetyperadix = '10', sourcetypesize = '500', description = 'TBD', sourcetypeid = '-9'),
+        financial_disclosure:text (sourcetypedecimals = '0', sourcetyperadix = '10', sourcetypesize = '5', description = 'TBD', sourcetypeid = '12'),
+        gsk_imp_gsk_drug_supply_planned:text (sourcetypedecimals = '0', sourcetyperadix = '10', sourcetypesize = '5', sourcetypeid = '12'),
+        ind_number:text (sourcetypedecimals = '0', sourcetyperadix = '10', sourcetypesize = '200', description = 'TBD', sourcetypeid = '12'),
+        reason_for_asset_na:text (sourcetypedecimals = '0', sourcetyperadix = '10', sourcetypesize = '100', sourcetypeid = '12'),
+        simple_transfer:text (sourcetypedecimals = '0', sourcetyperadix = '10', sourcetypesize = '5', description = 'NOT IN USE
+', sourcetypeid = '12'),
+        investigator:text (sourcetypedecimals = '0', sourcetyperadix = '10', sourcetypesize = '128', sourcetypeid = '12'),
+        study_organization:text (sourcetypedecimals = '0', sourcetyperadix = '10', sourcetypesize = '128', sourcetypeid = '12'),
+        clinical_study_global_id:text (sourcetypedecimals = '0', sourcetyperadix = '10', sourcetypesize = '200', description = 'TBD', sourcetypeid = '12'),
+        clinical_study_system_link:text (sourcetypedecimals = '0', sourcetyperadix = '10', sourcetypesize = '255', description = 'Used for CDMS Connection
+', sourcetypeid = '12'),
+        primary_asset_generic_name:text (sourcetypedecimals = '0', sourcetyperadix = '10', sourcetypesize = '500', sourcetypeid = '12'),
+        primary_product_family:text (sourcetypedecimals = '0', sourcetyperadix = '10', sourcetypesize = '128', description = 'TBD', sourcetypeid = '12'),
+        clinical_study_id:text (sourcetypedecimals = '0', sourcetyperadix = '10', sourcetypesize = '255', sourcetypeid = '12'),
+        allocation_block_semaphore:text (sourcetypedecimals = '0', sourcetyperadix = '10', sourcetypesize = '500', sourcetypeid = '-9'),
+        gsk_accountable_for_safety_reporting:text (sourcetypedecimals = '0', sourcetyperadix = '10', sourcetypesize = '5', sourcetypeid = '12'),
+        current_subject_allocation_id:long (sourcetypedecimals = '0', sourcetyperadix = '10', sourcetypesize = '19', sourcetypeid = '-5'),
+        non_product_specific_reason:text (sourcetypedecimals = '0', sourcetyperadix = '10', sourcetypesize = '100', sourcetypeid = '12'),
+        starting_subject_id:long (sourcetypedecimals = '0', sourcetyperadix = '10', sourcetypesize = '19', sourcetypeid = '-5'),
+        subject_allocation_block_size:int (sourcetypedecimals = '0', sourcetyperadix = '10', sourcetypesize = '10', sourcetypeid = '4'),
+        eu_ct_number:text (sourcetypedecimals = '0', sourcetyperadix = '10', sourcetypesize = '30', description = 'TBD', sourcetypeid = '12')
+    )
+    SET IMPLEMENTATION dv_study_milestones_outer_join_bad
+    FOLDER = '/4 unified views';
+
+ALTER VIEW study_milestones_outer_join_bad
+ LAYOUT (dv_study_milestones_outer_join_bad = [460, 64, 336, 272]);
+

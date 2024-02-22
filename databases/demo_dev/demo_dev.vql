@@ -1,0 +1,5 @@
+﻿CREATE OR REPLACE DATABASE demo_dev '';
+
+ALTER DATABASE demo_dev
+  CHARSET DEFAULT;
+

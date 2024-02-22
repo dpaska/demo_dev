@@ -1,0 +1,110 @@
+﻿CREATE OR REPLACE INTERFACE VIEW i_veevactms_clinical_study_milestone (
+        milestone_id:text (sourcetypedecimals = '0', sourcetyperadix = '10', sourcetypesize = '15', sourcetypeid = '12', description = 'TBD'),
+        legacy_milestone_type:text (sourcetypedecimals = '0', sourcetyperadix = '10', sourcetypesize = '500', description = 'Legacy Milestone Type (full milestone picklist)
+', sourcetypeid = '12'),
+        clinical_study_master_id:text (sourcetypedecimals = '0', sourcetyperadix = '10', sourcetypesize = '128', description = 'TBD
+', sourcetypeid = '12'),
+        milestone_type:text (sourcetypedecimals = '0', sourcetyperadix = '10', sourcetypesize = '500', description = 'Milestone Type (full milestone picklist)
+', sourcetypeid = '-9'),
+        study_centre:text (sourcetypedecimals = '0', sourcetyperadix = '10', sourcetypesize = '128', sourcetypeid = '12', description = 'TBD'),
+        study_country:text (sourcetypedecimals = '0', sourcetyperadix = '10', sourcetypesize = '128', description = 'Study Centre name
+', sourcetypeid = '12'),
+        abbreviation:text (sourcetypedecimals = '0', sourcetyperadix = '10', sourcetypesize = '20', description = 'Study Country
+', sourcetypeid = '12'),
+        actual_clinical_date:localdate (sourcetypedecimals = '0', sourcetyperadix = '10', sourcetypesize = '10', sourcetypeid = '91'),
+        actual_finish_date:localdate (sourcetypedecimals = '0', sourcetyperadix = '10', sourcetypesize = '7', description = 'Actual Milestone Complete Date entered or calculated in Vault
+', sourcetypeid = '91'),
+        actual_ir_date:localdate (sourcetypedecimals = '0', sourcetyperadix = '10', sourcetypesize = '10', sourcetypeid = '91'),
+        actual_start_date:localdate (sourcetypedecimals = '0', sourcetyperadix = '10', sourcetypesize = '10', description = 'Actual Complete Date for Submission Milestones entered in Vault
+', sourcetypeid = '91'),
+        approval_comments:text (sourcetypedecimals = '0', sourcetyperadix = '10', sourcetypesize = '1500', sourcetypeid = '12'),
+        approval_date:localdate (sourcetypedecimals = '0', sourcetyperadix = '10', sourcetypesize = '10', sourcetypeid = '91'),
+        archived_date:localdate (sourcetypedecimals = '0', sourcetyperadix = '10', sourcetypesize = '10', sourcetypeid = '91'),
+        baseline_finish_date:localdate (sourcetypedecimals = '0', sourcetyperadix = '10', sourcetypesize = '10', description = 'First Planned Finish Date entered in Vault
+', sourcetypeid = '91'),
+        baseline_start_date:localdate (sourcetypedecimals = '0', sourcetyperadix = '10', sourcetypesize = '10', description = 'First Planned Start Date entered in Vault
+', sourcetypeid = '91'),
+        percentage_complete:text (sourcetypedecimals = '0', sourcetyperadix = '10', sourcetypesize = '1000', description = 'Completeness of the milestone based on completion of previous milestones and collection and approval of expected documents
+', sourcetypeid = '12'),
+        conditional_approval_comments:text (sourcetypedecimals = '0', sourcetyperadix = '10', sourcetypesize = '1500', sourcetypeid = '12'),
+        conditional_approval_date:localdate (sourcetypedecimals = '0', sourcetyperadix = '10', sourcetypesize = '10', sourcetypeid = '91'),
+        created_by:text (sourcetypedecimals = '0', sourcetyperadix = '10', sourcetypesize = '128', description = 'Created by
+', sourcetypeid = '12'),
+        created_date:timestamp (sourcetypedecimals = '3', sourcetyperadix = '10', sourcetypesize = '23', description = 'Creation date
+', sourcetypeid = '93'),
+        db_lock_achieved:text (sourcetypedecimals = '0', sourcetyperadix = '10', sourcetypesize = '5', sourcetypeid = '12'),
+        divested:text (sourcetypedecimals = '0', sourcetyperadix = '10', sourcetypesize = '500', sourcetypeid = '-9'),
+        divested_date:localdate (sourcetypedecimals = '0', sourcetyperadix = '10', sourcetypesize = '10', sourcetypeid = '91'),
+        docs_complete_date:localdate (sourcetypedecimals = '0', sourcetyperadix = '10', sourcetypesize = '10', description = 'System calculated as the latest date across all completed documents when all required EDL items are complete
+', sourcetypeid = '91'),
+        milestone_external_id:text (sourcetypedecimals = '0', sourcetyperadix = '10', sourcetypesize = '50', description = 'Milestone External ID - reference for external system to manage record
+', sourcetypeid = '12'),
+        initial_submission_date:localdate (sourcetypedecimals = '0', sourcetyperadix = '10', sourcetypesize = '10', sourcetypeid = '91'),
+        initial_submission_to_done:long (sourcetypedecimals = '0', sourcetyperadix = '10', sourcetypesize = '19', sourcetypeid = '-5'),
+        internal_review_failed_date:localdate (sourcetypedecimals = '0', sourcetyperadix = '10', sourcetypesize = '10', sourcetypeid = '91'),
+        internal_review_issue_comments:text (sourcetypedecimals = '0', sourcetyperadix = '10', sourcetypesize = '1500', sourcetypeid = '12'),
+        internal_review_issue_type:text (sourcetypedecimals = '0', sourcetyperadix = '10', sourcetypesize = '500', sourcetypeid = '-9'),
+        internal_review_passed_date:localdate (sourcetypedecimals = '0', sourcetyperadix = '10', sourcetypesize = '10', sourcetypeid = '91'),
+        internal_review_start_date:localdate (sourcetypedecimals = '0', sourcetyperadix = '10', sourcetypesize = '10', sourcetypeid = '91'),
+        legacy_study:text (sourcetypedecimals = '0', sourcetyperadix = '10', sourcetypesize = '500', sourcetypeid = '-9'),
+        lsid:text (sourcetypedecimals = '0', sourcetyperadix = '10', sourcetypesize = '255', sourcetypeid = '12'),
+        template_milestone_set_id:text (sourcetypedecimals = '0', sourcetyperadix = '10', sourcetypesize = '15', description = 'Template Milestone Set Identifier
+', sourcetypeid = '12'),
+        template_milestone_set:text (sourcetypedecimals = '0', sourcetyperadix = '10', sourcetypesize = '128', description = 'Template Milestone Set Name
+', sourcetypeid = '12'),
+        milestone_template_id:text (sourcetypedecimals = '0', sourcetyperadix = '10', sourcetypesize = '15', description = 'Template Milestone ID
+', sourcetypeid = '12'),
+        milestone_template:text (sourcetypedecimals = '0', sourcetyperadix = '10', sourcetypesize = '128', description = 'Template Milestone Name
+', sourcetypeid = '12'),
+        modified_by:text (sourcetypedecimals = '0', sourcetyperadix = '10', sourcetypesize = '128', description = 'Modified by
+', sourcetypeid = '12'),
+        modified_date:timestamp (sourcetypedecimals = '3', sourcetyperadix = '10', sourcetypesize = '23', description = 'Modified Date', sourcetypeid = '93'),
+        milestone_object_type:text (sourcetypedecimals = '0', sourcetyperadix = '10', sourcetypesize = '50', description = 'Milestone Object Type
+', sourcetypeid = '-9'),
+        milestone_subset_milestone_name:text (sourcetypedecimals = '0', sourcetyperadix = '10', sourcetypesize = '128', sourcetypeid = '12', description = 'TBD'),
+        planisware_owned:text (sourcetypedecimals = '0', sourcetyperadix = '10', sourcetypesize = '5', sourcetypeid = '12', description = 'TBD'),
+        planned_clinical_date:localdate (sourcetypedecimals = '0', sourcetyperadix = '10', sourcetypesize = '10', sourcetypeid = '91'),
+        planned_finish_date:localdate (sourcetypedecimals = '0', sourcetyperadix = '10', sourcetypesize = '7', description = 'Planned Milestone Complete Date entered in Vault
+', sourcetypeid = '91'),
+        planned_ir_date:localdate (sourcetypedecimals = '0', sourcetyperadix = '10', sourcetypesize = '10', sourcetypeid = '91'),
+        planned_start_date:localdate (sourcetypedecimals = '0', sourcetyperadix = '10', sourcetypesize = '10', description = 'Planned Start Date for Submission Milestones entered in Vault
+', sourcetypeid = '91'),
+        queries_received_comments:text (sourcetypedecimals = '0', sourcetyperadix = '10', sourcetypesize = '1500', sourcetypeid = '12'),
+        queries_received_date:localdate (sourcetypedecimals = '0', sourcetyperadix = '10', sourcetypesize = '10', sourcetypeid = '91'),
+        rejection_comments:text (sourcetypedecimals = '0', sourcetyperadix = '10', sourcetypesize = '1500', sourcetypeid = '12'),
+        rejection_date:localdate (sourcetypedecimals = '0', sourcetyperadix = '10', sourcetypesize = '10', sourcetypeid = '91'),
+        risk:text (sourcetypedecimals = '0', sourcetyperadix = '10', sourcetypesize = '100', description = 'Risk Tracking
+', sourcetypeid = '12'),
+        sequence:long (sourcetypedecimals = '0', sourcetyperadix = '10', sourcetypesize = '19', description = 'Sequence Number
+', sourcetypeid = '-5'),
+        centre_id:text (sourcetypedecimals = '0', sourcetyperadix = '10', sourcetypesize = '15', description = 'Study Site name
+', sourcetypeid = '12'),
+        study_milestone_lifecycle_state:text (sourcetypedecimals = '0', sourcetyperadix = '10', sourcetypesize = '500', description = 'Study Milesetone Lifecycle state (Active, Archived, Complete, Datavision and PLW Owned, Datavision Owned, Divested, In Internal Review, Inactive, Internal Review Failed, Internal Review Passed, Planisware Owned, Planned, Started, Submission Conditionally Approved, Submission Queries Received, Submission Rejected, Unplanned)
+', sourcetypeid = '12'),
+        system_status:text (sourcetypedecimals = '0', sourcetyperadix = '10', sourcetypesize = '500', description = 'Active or Inactive
+', sourcetypeid = '-9'),
+        study_id:text (sourcetypedecimals = '0', sourcetyperadix = '10', sourcetypesize = '15', description = 'Study ID
+', sourcetypeid = '12'),
+        study_country_id:text (sourcetypedecimals = '0', sourcetyperadix = '10', sourcetypesize = '15', description = 'Study Country ID
+', sourcetypeid = '12'),
+        milestone_subset_name:text (sourcetypedecimals = '0', sourcetyperadix = '10', sourcetypesize = '128', sourcetypeid = '12', description = 'TBD'),
+        submission_acknowledged_date:localdate (sourcetypedecimals = '0', sourcetyperadix = '10', sourcetypesize = '10', sourcetypeid = '91'),
+        submission_decision:text (sourcetypedecimals = '0', sourcetyperadix = '10', sourcetypesize = '500', sourcetypeid = '-9'),
+        tasks_complete_date:localdate (sourcetypedecimals = '0', sourcetyperadix = '10', sourcetypesize = '10', description = 'Date on which all required tasks associated with this milestone were completed
+', sourcetypeid = '91'),
+        tracking_level:text (sourcetypesize = '500', sourcetypeid = '-9'),
+        resubmission_start_date:localdate (sourcetypedecimals = '0', sourcetypesize = '10', sourcetypeid = '91'),
+        clinical_study_milestone_global_id:text (sourcetypesize = '200', sourcetypeid = '12', description = 'TBD'),
+        clinical_study_milestone_system_link:text (sourcetypesize = '255', sourcetypeid = '12', description = 'TBD'),
+        story_milestone:text (sourcetypesize = '128', description = 'Story Milestone (If this milestone is linked to the study narrative, please choose the applicable event milestone)
+', sourcetypeid = '12'),
+        integration_id:text (sourcetypesize = '1500', sourcetypeid = '12'),
+        completeness:text,
+        milestone_subset_id:text
+    )
+    SET IMPLEMENTATION veevactms_r5dev.clinical_study_milestones
+    FOLDER = '/2 base views/references';
+
+ALTER VIEW i_veevactms_clinical_study_milestone
+ LAYOUT (clinical_study_milestones = [550, 20, 361, 198]);
+
